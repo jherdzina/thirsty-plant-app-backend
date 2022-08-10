@@ -30,10 +30,11 @@ const PORT = process.env.PORT || 5001;
 const URI = process.env.MONGO_URI;
 
 console.log(URI)
-// app.listen(process.env.PORT);
-mongoose.connect(`${URI}`, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((error) => console.log(error.message));
 
 
+
+//module.exports.Plants = require('./controllers/models/plants')
 //mongoose.set('useFindAndModify', false)  
