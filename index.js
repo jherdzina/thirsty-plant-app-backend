@@ -27,10 +27,11 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 5001;
-const URI = process.env.MONGO_URL;
+const URI = process.env.MONGO_URI;
 
+console.log(URI)
 // app.listen(process.env.PORT);
-mongoose.connect(`${process.env.MONGO_URI}`, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`${URI}`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((error) => console.log(error.message));
 
