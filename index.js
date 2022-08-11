@@ -21,6 +21,9 @@ const corsOptions ={
     optionSuccessStatus:200
 }
 
+
+app.use(express.static('public'))
+
 app.use('/', router);
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
@@ -29,7 +32,7 @@ app.use(cors(corsOptions));
 const PORT = process.env.PORT || 5001;
 const URI = process.env.MONGO_URI;
 
-console.log(URI)
+console.log(`my uri is: ${URI}`)
 mongoose.connect(`${URI}`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((error) => console.log(error.message));
