@@ -12,5 +12,4 @@ const plantSchema = new mongoose.Schema({
     waterSchedule: { type: String }
 })
 
-
 module.exports = mongoose.model('Plant', plantSchema)
