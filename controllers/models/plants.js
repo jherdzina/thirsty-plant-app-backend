@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const plantSchema = new mongoose.Schema({
-    plantType: { type: String, required: true },
-    plantName: { type: String },
+    plantName: { type: String, required: true },
+    altPlantName: { type: String },
     imageURL: { type: String },
     roomLocated: { type: String },
     wateredLast: { 
